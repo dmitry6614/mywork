@@ -1,2 +1,3 @@
 puts 'hello, world'
-p 'hello, world'
+puts 'goodbuy, world
+'
