@@ -19,6 +19,14 @@ ball = ['Бесспорно',
 random = ball.sample
 ball.delete(random)
 
-puts "привет отвечаю на твой вопрос... #{random} "
+privetik = ['Привет, дорогой друг. Отвечаю на твой вопрос...',
+'Кто вопрошает, тот получит ответ:',
+'Здравствуй, смертный. Сегодня для тебя такой ответ:']
+
+upgrade = privetik.sample
+
+ puts  "#{upgrade} #{random} "
+
+
 
 
