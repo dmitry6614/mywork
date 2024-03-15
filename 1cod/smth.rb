@@ -1,5 +1,5 @@
 puts 'привет дорогой как твоё имя?'
-user = gets.chomp.to_s
+user = gets.chomp
 
 name = 'dmitry'
 
