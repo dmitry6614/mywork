@@ -2,9 +2,9 @@ puts 'Добрый день вы попали на раздачу призов, 
 puts 'Выберите номер 1-8'
 
 cars = ['audi', 'bmw', 'mersedes', 'reno', 'geely', 'ferrari', 'opel', 'lada']
-cars.unshift(nil) 
 
-user = gets.chomp.to_i
+
+user = gets.chomp.to_i - 1
 
 if  user <= 0 || user > 8
     puts 'такого варианта нет'

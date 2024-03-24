@@ -12,5 +12,6 @@ while a < user
     arr << a 
     sum += a
     end
+
 p arr
 p sum
