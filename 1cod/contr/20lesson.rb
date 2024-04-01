@@ -3,7 +3,8 @@ a = [1, 2, 3, 'cow']
 arr2 = []
 for element in a
     if element.is_a?(Integer)
-        arr2 << element
+       puts "true"
+    else
+       puts "false"
     end
 end
-puts "#{arr2}"
