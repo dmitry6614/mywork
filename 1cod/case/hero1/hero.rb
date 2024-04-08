@@ -31,28 +31,53 @@ puts "            #{@name}
 
     end
 
-    def menu
-        puts "Опыт до следющего уровня #{@exp} / #{@limit}
+    def level_up 
+        if @exp == @limit
+            @limit = @exp + @limit / 2
+            @lvl += 1
+            puts "Поздравляю вы достигли следующего уровня #{@lvl} 
+             #{@exp} / #{@limit} "
+        elsif @exp > @limit
+            @ost = @exp - @limit
+            @limit = @exp + @limit / 2
+            @exp = @ost
+            @lvl += 1
+            puts "Поздравляю вы достигли следующего уровня #{@lvl}
+             #{@exp} / #{@limit} "
+        end
+    end
 
-
-        1.farm line             2.farm jungle           3.level up" #лимит надо создать
-        @user = STDIN.gets.chomp.to_i
+    def counter_exp
         line_exp = rand(0..4)
         jungle_exp = rand(1..6)
         case @user
         when 1
              @exp += line_exp * 60
-             puts " Ты убил #{line_exp} крипов  и получил #{@exp}
+             puts " Ты убил #{line_exp} крипов  и получил #{line_exp * 60}
              Опыт до следющего уровня #{@exp} / #{@limit}"
         when 2
             @exp += jungle_exp * 20
-            puts " Ты убил #{line_exp} крипов  и получил #{@exp}
+            puts " Ты убил #{line_exp} крипов  и получил #{jungle_exp * 20}
             Опыт до следющего уровня #{@exp} / #{@limit}"
         end
+    end
 
+    def fdfd
+        puts "Опыт до следющего уровня #{@exp} / #{@limit}"
+    end
 
-        #нужно создать метод для экспы 
-# лимита
-        #
+    def menu
+        puts "1.farm line             2.farm jungle           "
+        @user = STDIN.gets.chomp.to_i
+    end
+
+    def bar
+        while @user != 1 || @user != 2
+            puts "Нет такого выбора введите 1 или 2"
+            puts menu
+            system 'clear'
+            puts counter_exp
+            puts level_up
+        end
     end
 end
