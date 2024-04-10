@@ -1,5 +1,5 @@
 class Hero
-    def initialize(name, dmg, arm, aps, str, dex, int, exp, mana, hp, lvl, type, limit)
+    def initialize(name, dmg, arm, aps, str, dex, int, exp, mana, hp, lvl, type, limit, gold)
         @name = name 
         @dmg = dmg
         @arm = arm
@@ -13,20 +13,21 @@ class Hero
         @lvl = lvl
         @type = type
         @limit = limit
+        @gold = gold
     end
 
     def portret
-puts "            #{@name}
-        _________________________
+puts "            #{@name}                        GOLD   #{@gold}
+        __________________________________________________________________
         |            #{@dmg} DMG
-        |            #{@arm} ARM
+        |            #{@arm} ARM         1 skill   2 skill  3skill 4 skill
         |  /0_0/     #{@aps} APS
         |   _|_/     #{@str} STR
-        |    |       #{@dex} DEX
+        |    |       #{@dex} DEX         HP        #{@hp}
         |   //       #{@int} INT
         |___
-        | #{@lvl} |
-        |LVL|_____________________"
+        | #{@lvl} |                       MANA      #{@mana}
+        |LVL|_____________________________________________________________"
 
 
     end
@@ -72,12 +73,11 @@ puts "            #{@name}
     end
 
     def bar
-        while @user != 1 || @user != 2
-            puts "Нет такого выбора введите 1 или 2"
+       while @user == 1 || @user == 2
             puts menu
             system 'clear'
             puts counter_exp
             puts level_up
         end
-    end
+    end   
 end
