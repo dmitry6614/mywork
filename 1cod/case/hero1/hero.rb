@@ -51,15 +51,17 @@ puts "            #{@name}                        GOLD   #{@gold}
     def counter_exp
         line_exp = rand(0..4)
         jungle_exp = rand(1..6)
-        case @user
-        when 1
+        
+        if @user == 1
              @exp += line_exp * 60
              puts " Ты убил #{line_exp} крипов  и получил #{line_exp * 60}
              Опыт до следющего уровня #{@exp} / #{@limit}"
-        when 2
+        elsif @user == 2
             @exp += jungle_exp * 20
             puts " Ты убил #{line_exp} крипов  и получил #{jungle_exp * 20}
             Опыт до следющего уровня #{@exp} / #{@limit}"
+        else
+            puts "Выбери 1 или 2!"
         end
     end
 
@@ -73,11 +75,13 @@ puts "            #{@name}                        GOLD   #{@gold}
     end
 
     def bar
-       while @user == 1 || @user == 2
+        loop do
             puts menu
-            system 'clear'
-            puts counter_exp
             puts level_up
-        end
-    end   
+            system 'clear'
+            puts fdfd
+            puts counter_exp
+            puts bar
+        end    
+    end 
 end
