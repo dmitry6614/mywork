@@ -48,20 +48,30 @@ puts "            #{@name}                        GOLD   #{@gold}
         end
     end
 
+    def shop
+    end
+
+
     def counter_exp
-        line_exp = rand(0..4)
-        jungle_exp = rand(1..6)
+        @line_exp = rand(0..4)
+        @jungle_exp = rand(1..6)
+        @line_gold = rand(37..50)
+        @jungle_gold = rand(17..40)
         
         if @user == 1
-             @exp += line_exp * 60
-             puts " Ты убил #{line_exp} крипов  и получил #{line_exp * 60}
+             @exp += @line_exp * 60
+             @gold += @line_gold * @line_exp 
+             puts " Ты убил #{@line_exp} крипов  и получил #{@line_exp * 60} и #{@line_gold * @line_exp} gold
              Опыт до следющего уровня #{@exp} / #{@limit}"
         elsif @user == 2
-            @exp += jungle_exp * 20
-            puts " Ты убил #{line_exp} крипов  и получил #{jungle_exp * 20}
+            @exp += @jungle_exp * 20
+            @gold += @jungle_exp * @jungle_gold
+            puts " Ты убил #{@line_exp} крипов  и получил #{@jungle_exp * 20} и #{@jungle_exp * @jungle_gold} gold
             Опыт до следющего уровня #{@exp} / #{@limit}"
+        elsif @user == 3
+            portret
         else
-            puts "Выбери 1 или 2!"
+            puts "Выбери 1, 2, 3 или 4!"
         end
     end
 
@@ -70,7 +80,7 @@ puts "            #{@name}                        GOLD   #{@gold}
     end
 
     def menu
-        puts "1.farm line             2.farm jungle           "
+        puts "1.farm line             2.farm jungle             3.to menu              4.shop     "
         @user = STDIN.gets.chomp.to_i
     end
 

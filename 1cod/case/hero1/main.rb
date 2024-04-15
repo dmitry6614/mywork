@@ -1,9 +1,9 @@
 require './hero.rb'
+require './items.rb'
+axe = Hero.new('AXE', 50, 3.33, 100, 22, 20, 18, 0, 291, 670, 1, 'MELEE', 400, 600 )
 
-hero1 = Hero.new('AXE', 50, 3.33, 100, 22, 20, 18, 0, 291, 670, 1, 'MELEE', 400, 600 )
-
-puts hero1.portret
+puts axe.portret
 
 
-hero1.bar
+axe.bar
 
