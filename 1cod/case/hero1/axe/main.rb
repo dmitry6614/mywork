@@ -1,12 +1,14 @@
 require './axe.rb'
-#require './items.rb'
+require './items.rb'
 
 
 axe = Hero.new('AXE', 50, 3.33, 100, 22, 20, 18, 291, 670, 1, 'MELEE', 400, 600, 0)
-#items = 
+items = Items.new(50, 3.33, 100, 22, 20, 18, 291, 670)
+
+items.items_name
+
 
 axe.portret
-axe.gold_counter
 
 def bar(axe)
    puts "1.farm line         2.farm jungle         3.menu           4.shop"
@@ -24,6 +26,7 @@ def bar(axe)
         system 'clear'
         puts " Ты убил #{line_exp} крипов  и получил опыта #{line_exp * 60} и #{line_gold * line_exp} gold"
         axe.exp_counter(line_exp * 60)
+        axe.gold_counter(line_exp * line_gold)
         bar(axe)
     elsif input == 2
         system 'clear' 
@@ -44,16 +47,39 @@ def bar(axe)
 end
 bar(axe)
 
-def choice_artefacts(axe)
+def consumables(items)
+    puts "5.healing salve - #{@price} price"
+    puts "6.mango - #{@price} price"
+    choice_consumables = STDIN.gets.chomp.to_i
+    if choice_consumables == 5
+        items.calculator(healing_salve)
+    elsif choice_consumables == 6
+        items.calculator(mango)
+    end
+end
+
+def armor(items)
+   puts "5.assault_cuirass - #{@price}"
+   puts "6.Hearth of Tarrasque - #{@price}"
+
+end   
+
+def choice_artefacts(items)
     puts "1.Consumables      2.Armor       3.Weapons          4.Artifacts       5.menu"
     buy_artefacts = STDIN.gets.chomp.to_i
 
     case buy_artefacts
     when 1
-        consumables
+        items.consumables
     when 2
-        puts "7 Assault Cuirass -#{price} price"
+        items.armor
     when 3 
-        puts "9 Daedalus - #{price} price  "
+        items.weapons
+    when 4
+        items.artifacts
+    when 5
+        bar(axe)
+    else 
+        bar(axe)
     end
 end

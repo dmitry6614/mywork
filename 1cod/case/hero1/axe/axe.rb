@@ -35,7 +35,7 @@ puts "            #{@name}                        GOLD   #{@gold}
         exp_limit if @exp_now >= @limit
     end
 
-    def gold_counter
+    def gold_counter(gold)
         @gold += gold
     end
     
