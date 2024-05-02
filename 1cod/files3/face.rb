@@ -22,10 +22,10 @@ if File.exist?(forehead_file_puth)
     content_forehead = forehead.readlines
 
     forehead.close
-    f = content_forehead.pop
-    ff = f.sample
-    puts ff
-    file.print(ff)
+
+    f = content_forehead.sample
+
+    file.puts(f)
 else
     puts "not such file"
 end
@@ -38,8 +38,8 @@ if File.exist?(eyes_file_puth)
     eyes.close
 
     e = content_eyes.sample
-    puts e
-    file.print(e)
+
+    file.puts(e)
 else
     puts "not such file"
 end
@@ -52,8 +52,8 @@ if File.exist?(nose_file_puth)
     nose.close
 
     n = content_nose.sample
-    puts n
-    file.print(n)
+
+    file.puts(n)
 else
     puts "not such file"
 end
@@ -66,10 +66,8 @@ if File.exist?(mouth_file_puth)
     mouth.close
 
     m = content_mouth.sample
-    puts m
-    file.print(m)
+
+    file.puts(m)
 else
     puts "not such file"
 end
-
-
