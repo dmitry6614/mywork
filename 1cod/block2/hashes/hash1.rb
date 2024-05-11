@@ -11,6 +11,4 @@ ticket = {
 puts "#{ticket[:ticket]}
 #{ticket[:way]} - #{ticket[:way2]}
 #{ticket[:name][0]} #{ticket[:surname]} #{ticket[:patronymic]}
-#{ticket[:passport]}
-"
-
+#{ticket[:passport]}"
