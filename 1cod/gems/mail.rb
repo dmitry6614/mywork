@@ -22,8 +22,8 @@ smtp_settings = {
 mail = Mail.new do
     from sender_mail
     to recipient_mail
-    subject "hi!"
-    body "qq bro, you cool man"
+    subject  "Введите заголовок" + "#{STDIN.gets.chomp}"
+    body  "Введите письмо" + "#{STDIN.gets.chomp}"
 end
 
 mail.delivery_method(:smtp, smtp_settings)

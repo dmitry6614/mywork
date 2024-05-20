@@ -9,6 +9,7 @@ def invert(list)
         result << element.abs
       end
     end
-    return result
-  end
-  puts "#{invert(list)}"
+  return result
+end
+
+puts "#{invert(list)}"
